@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  stldiscordbot:
+    build: .
+    environment:
+      - DISCORD_TOKEN
+      - THINGIVERSE_TOKEN
