@@ -1,0 +1,21 @@
+name: Docker
+
+on: push
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout
+
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      name: Build and Push
+      with:
+        image: saxmfone1/stldiscordbot
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
